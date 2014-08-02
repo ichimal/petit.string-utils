@@ -13,9 +13,15 @@
   :licence "MIT"
   :description "petit string utilities"
   :components
-    ((:module :src
+    ((:module src
       :serial t
       :components ((:file :packages)
                    (:file :builder)
                    (:file :filter) ))))
+
+(defmethod perform ((op test-op)
+                    (component (eql (find-system :petit.string-utils))) )
+  (declare (ignore op component))
+  (operate 'load-op :petit.string-utils-test)
+  (operate 'test-op :petit.string-utils-test :force t) )
 

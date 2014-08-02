@@ -5,8 +5,9 @@
 
 (defmethod head-match-p ((item string) (whole-string string))
   (let ((item-length (length item)))
-    (if (eql (search item whole-string :end2 item-length) 0)
-      item-length )))
+    (if (>= (length whole-string) item-length)
+      (if (eql (search item whole-string :end2 item-length) 0)
+        item-length ))))
 
 (defmethod head-match-p (obj (whole-string string))
   (head-match-p (recursive-coerse-string obj) whole-string) )

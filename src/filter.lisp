@@ -2,8 +2,6 @@
 
 (defgeneric head-match-p (item whole-string))
 (defgeneric tail-match-p (item whole-string))
-(defgeneric string-%% (item whole-string))
-(defgeneric string-## (item whole-string))
 
 (defmethod head-match-p ((item string) (whole-string string))
   (let ((item-length (length item)))
@@ -22,25 +20,31 @@
     (if (>= start2 0)
       (search item whole-string :start2 start2) )))
 
-(defmethod string-%% ((item string) (whole-string string))
-  (let ((index (head-match-p item whole-string)))
+(defun string-## (item whole-string)
+  (let* ((effective-item
+           (if (stringp item)
+             item
+             (recursive-coerse-string item) ))
+         (effective-whole-string
+           (if (stringp whole-string)
+             whole-string
+             (recursive-coerse-string whole-string) ))
+         (index (head-match-p effective-item effective-whole-string)) )
     (if (integerp index)
-      (subseq whole-string index) )))
+      (values (subseq effective-whole-string index) t)
+      (values effective-whole-string nil) )))
 
-(defmethod string-%% (obj (whole-string string))
-  (string-%% (recursive-coerse-string obj) whole-string) )
-
-(defmethod string-%% ((item string) obj)
-  (string-%% item (recursive-coerse-string obj)) )
-
-(defmethod string-## ((item string) (whole-string string))
-  (let ((index (tail-match-p item whole-string)))
+(defun string-%% (item whole-string)
+  (let* ((effective-item
+           (if (stringp item)
+             item
+             (recursive-coerse-string item) ))
+         (effective-whole-string
+           (if (stringp whole-string)
+             whole-string
+             (recursive-coerse-string whole-string) ))
+         (index (tail-match-p effective-item effective-whole-string)) )
     (if (integerp index)
-      (subseq whole-string 0 index) )))
-
-(defmethod string-## (obj (whole-string string))
-  (string-## (recursive-coerse-string obj) whole-string) )
-
-(defmethod string-## ((item string) obj)
-  (string-## item (recursive-coerse-string obj)) )
+      (values (subseq effective-whole-string 0 index) t)
+      (values effective-whole-string nil) )))
 

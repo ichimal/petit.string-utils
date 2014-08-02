@@ -16,5 +16,6 @@
     ((:module :src
       :serial t
       :components ((:file :packages)
-                   (:file :builder) ))))
+                   (:file :builder)
+                   (:file :filter) ))))
 

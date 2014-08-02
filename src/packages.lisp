@@ -8,5 +8,6 @@
     #:coerce-string
     #:string-++ #:string-++2
     ;; for filter
-    #:string-%% #:string-## #:nstring-%% #:nstring-## ))
+    #:string-%% #:string-##
+    #:head-match-p #:tail-match-p ))
 

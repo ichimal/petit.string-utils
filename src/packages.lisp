@@ -1,6 +1,6 @@
 (cl:in-package #:petit.string-utils-asd)
 
-(defpackage :petit.sring-utils
+(defpackage :petit.string-utils
   (:use :cl)
   (:nicknames :petit.strutils :petit.su :psu)
   (:export

@@ -1,4 +1,4 @@
-(cl:in-package :petit.sring-utils)
+(cl:in-package :petit.string-utils)
 
 (defgeneric coerce-string (obj))
 

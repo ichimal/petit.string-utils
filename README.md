@@ -80,15 +80,15 @@ When test does not matched, `TAIL-MATCH-P` returns `NIL`.
 #### Description:
 `STRING-##` removes *item* from head part of the *whole-string*, if matched.
 
-### *[Function]* `STRING-%%
+### *[Function]* `STRING-%%`
 #### Syntax:
 `string-%%` *item* *whole-string* => (values `CL:STRING` *modified-or-not-p*)
 
 #### Description:
 `STRING-%%` removes *item* from tail part of the *whole-string*, if matched.
 
-## Note for the type of given arguments for `HEAD-MATCH-P`, `TAIL-MATCH-P`, `STRING-##` and `STRING-%%`
-When the all given arguments are `CL:STRING` object, these functions just work as described above.
+## Note for the type of arguments for `HEAD-MATCH-P`, `TAIL-MATCH-P`, `STRING-##` and `STRING-%%`
+When the all given arguments are `CL:STRING` object, these functions jut work as described above.
 
 When the given *item* is not a `CL:STRING` object, these functions recursively apply `COERCE-STRING` to *item* before testing.
 

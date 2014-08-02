@@ -11,7 +11,7 @@
   :maintainer "SUZUKI Shingo"
   :author "SUZUKI Shingo"
   :licence "MIT"
-  :description "petit string utilities"
+  :description "A petit tool box about string modification"
   :components
     ((:module src
       :serial t

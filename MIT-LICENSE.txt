@@ -1,5 +1,5 @@
 Copyright (C) 2014 Shingo SUZUKI,
-https://github.com/ichimal/petit.string-utils
+https://github.com/ichimal/petit.string-utils.git
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

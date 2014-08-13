@@ -2,3 +2,5 @@
   (:use :cl :petit.string-utils :rt)
   (:import-from :rt #:*expected-failures*) )
 
+(rt:rem-all-tests)
+

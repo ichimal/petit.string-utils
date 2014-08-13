@@ -23,5 +23,6 @@
 (defmethod perform ((op test-op)
                     (component (eql (find-system :petit.string-utils-test))) )
   (declare (ignore op component))
-  (funcall (intern "DO-TESTS" :rt)) )
+  (if (funcall (intern "DO-TESTS" :rt))
+    (funcall (intern "REM-ALL-TESTS" :rt)) ))
 

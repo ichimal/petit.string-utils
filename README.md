@@ -1,7 +1,7 @@
 trivial-string-utils
 ====
 
-A petit tool box about string modification.
+A petit toolbox about string modification.
 
 ## Package name and its nicknames:
 
@@ -20,13 +20,13 @@ A petit tool box about string modification.
 #### Description: 
 To coerce to `CL:STRING` from a lisp object.
 
-#### default supported types of coercing from:
+#### Default supported types of coercing from:
 a string, a character, a symbol, and a number.
 
 #### Note:
 not applied recursively.
 
-#### how to support for your own types and/or classes:
+#### How to support for your own types and/or classes:
 you can register coercing method for your own types and/or classes.
 
 ### *[Function]* `STRING-++`
@@ -38,11 +38,11 @@ To concatenate given objects to a `CL:STRING` object.
 
 `COERCE-STRING` will be applied to each of given objects recursively.
 
-#### supported recursive structures:
+#### Supported recursive structures:
 - `CL:LIST`,
 - `CL:VECTOR`.
 
-#### non-supported recursive structures:
+#### Non-supported recursive structures:
 - Your own structure,
 - generic `CL:ARRAY`, which is not a vector.
 
@@ -94,6 +94,9 @@ When the given *item* is not a `CL:STRING` object, these functions recursively a
 
 When the given *whole-string* is not a `CL:STRING` object, same as *item*.
 
+## Limitation:
+Currently, this toolbox does not support any kind of regular expression.
+
 ## Examples:
     > (psu:string-++ "pi" '= pi)
     "pi=3.1415926535897932385L0"
@@ -115,6 +118,12 @@ When the given *whole-string* is not a `CL:STRING` object, same as *item*.
     > (string-## 3 pi)
     ".1415926535897932385L0" ;
     t
+
+## Author:
+SUZUKI Shingo (r2.ichimal@gmail.com)
+
+## Copyright:
+Copyright (C) 2014 SUZUKI Shingo (r2.ichimal@gmail.com)
 
 ## License:
 Under MIT license.

@@ -54,19 +54,19 @@
   "foobarbaz" nil )
 
 ;; tset for string-%%
-(deftest remove-head.1
+(deftest remove-tail.1
   (string-%% "baz" "foobarbaz")
   "foobar" t )
 
-(deftest remove-head.2
+(deftest remove-tail.2
   (string-%% "foo" "foo")
   "" t )
 
-(deftest remove-head.3
+(deftest remove-tail.3
   (string-%% "foo" "fo")
   "fo" nil )
 
-(deftest remove-head.4
+(deftest remove-tail.4
   (string-%% "bar" "foobarbaz")
   "foobarbaz" nil )
 

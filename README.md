@@ -1,4 +1,4 @@
-trivial-string-utils
+petit.string-utils
 ====
 
 A petit toolbox about string modification.
